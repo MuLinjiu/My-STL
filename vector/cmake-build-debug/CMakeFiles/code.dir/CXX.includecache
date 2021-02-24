@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../exceptions.hpp
+cstddef
+-
+cstring
+-
+string
+-
+
+../vector.hpp
+exceptions.hpp
+../exceptions.hpp
+iostream
+-
+climits
+-
+cstddef
+-
+
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/two/code.cpp
+vector.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/two/vector.hpp
+iostream
+-
+vector
+-
+
