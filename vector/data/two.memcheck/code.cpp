@@ -12,6 +12,7 @@ int main()
 	}
 	std::cout << v.back() << std::endl;
 	for (long long i = 0; i < 1LL << 10; ++i) {
+	    //std::cout << i << std::endl ;
 		v.insert(v.begin(), i);
 	}
 	for (size_t i = 0; i < 1LL << 10; ++i) {

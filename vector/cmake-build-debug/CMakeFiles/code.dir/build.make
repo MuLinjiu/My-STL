@@ -57,27 +57,27 @@ include CMakeFiles/code.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/code.dir/flags.make
 
-CMakeFiles/code.dir/data/two/code.cpp.o: CMakeFiles/code.dir/flags.make
-CMakeFiles/code.dir/data/two/code.cpp.o: ../data/two/code.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/code.dir/data/two/code.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/code.dir/data/two/code.cpp.o -c "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/two/code.cpp"
+CMakeFiles/code.dir/data/one/code.cpp.o: CMakeFiles/code.dir/flags.make
+CMakeFiles/code.dir/data/one/code.cpp.o: ../data/one/code.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/code.dir/data/one/code.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/code.dir/data/one/code.cpp.o -c "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/one/code.cpp"
 
-CMakeFiles/code.dir/data/two/code.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/data/two/code.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/two/code.cpp" > CMakeFiles/code.dir/data/two/code.cpp.i
+CMakeFiles/code.dir/data/one/code.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/code.dir/data/one/code.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/one/code.cpp" > CMakeFiles/code.dir/data/one/code.cpp.i
 
-CMakeFiles/code.dir/data/two/code.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/data/two/code.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/two/code.cpp" -o CMakeFiles/code.dir/data/two/code.cpp.s
+CMakeFiles/code.dir/data/one/code.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/code.dir/data/one/code.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/data/one/code.cpp" -o CMakeFiles/code.dir/data/one/code.cpp.s
 
 # Object files for target code
 code_OBJECTS = \
-"CMakeFiles/code.dir/data/two/code.cpp.o"
+"CMakeFiles/code.dir/data/one/code.cpp.o"
 
 # External object files for target code
 code_EXTERNAL_OBJECTS =
 
-code: CMakeFiles/code.dir/data/two/code.cpp.o
+code: CMakeFiles/code.dir/data/one/code.cpp.o
 code: CMakeFiles/code.dir/build.make
 code: CMakeFiles/code.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/d/HXL/FIRST(2)/STLite_ACM-main/vector/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable code"

@@ -123,32 +123,32 @@ code/fast:
 	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/build
 .PHONY : code/fast
 
-data/two/code.o: data/two/code.cpp.o
+data/one/code.o: data/one/code.cpp.o
 
-.PHONY : data/two/code.o
+.PHONY : data/one/code.o
 
 # target to build an object file
-data/two/code.cpp.o:
-	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/data/two/code.cpp.o
-.PHONY : data/two/code.cpp.o
+data/one/code.cpp.o:
+	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/data/one/code.cpp.o
+.PHONY : data/one/code.cpp.o
 
-data/two/code.i: data/two/code.cpp.i
+data/one/code.i: data/one/code.cpp.i
 
-.PHONY : data/two/code.i
+.PHONY : data/one/code.i
 
 # target to preprocess a source file
-data/two/code.cpp.i:
-	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/data/two/code.cpp.i
-.PHONY : data/two/code.cpp.i
+data/one/code.cpp.i:
+	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/data/one/code.cpp.i
+.PHONY : data/one/code.cpp.i
 
-data/two/code.s: data/two/code.cpp.s
+data/one/code.s: data/one/code.cpp.s
 
-.PHONY : data/two/code.s
+.PHONY : data/one/code.s
 
 # target to generate assembly for a file
-data/two/code.cpp.s:
-	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/data/two/code.cpp.s
-.PHONY : data/two/code.cpp.s
+data/one/code.cpp.s:
+	$(MAKE) -f CMakeFiles/code.dir/build.make CMakeFiles/code.dir/data/one/code.cpp.s
+.PHONY : data/one/code.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... code"
-	@echo "... data/two/code.o"
-	@echo "... data/two/code.i"
-	@echo "... data/two/code.s"
+	@echo "... data/one/code.o"
+	@echo "... data/one/code.i"
+	@echo "... data/one/code.s"
 .PHONY : help
 
 
