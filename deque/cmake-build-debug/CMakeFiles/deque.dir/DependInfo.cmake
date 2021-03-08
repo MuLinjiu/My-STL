@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/six/code.cpp" "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/cmake-build-debug/CMakeFiles/deque.dir/data/six/code.cpp.o"
+  "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/code.cpp" "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/cmake-build-debug/CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -836,13 +836,14 @@ namespace sjtu {
                 for(int i = 0 ; i < tmp->block_size ; i++){
                     nodearrary[i + block_size] = new T(*tmp->nodearrary[i]);
                 }
-                for(int i = 0 ; i < tmp->block_size ; i++){
-                    delete tmp->nodearrary[i];
-                    tmp->nodearrary[i] = nullptr;
-                }
+//                for(int i = 0 ; i < tmp->block_size ; i++){
+//                    delete tmp->nodearrary[i];
+//                    tmp->nodearrary[i] = nullptr;
+//                }
                 block_size += tmp->block_size;
                 next = tmp->next;
                 tmp->next->pre = this;
+                delete tmp;
             }
             void addnode(int n, const T & node){
                 if(n == block_size){
@@ -1331,9 +1332,7 @@ namespace sjtu {
             block *p = head;
             block *q = p->next;
             while(q != nullptr){
-                if(p){
-                    delete p;
-                }
+                delete p;
                 p = q ;
                 q = q->next;
             }
