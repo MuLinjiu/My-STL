@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-../data/class-bint.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/1.cpp
+class-integer.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/class-integer.hpp
+class-matrix.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/class-matrix.hpp
+class-bint.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/class-bint.hpp
+iostream
+-
+vector
+-
+deque
+-
+src.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/src.hpp
+
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/class-bint.hpp
 string
 -
 iostream
@@ -24,9 +40,9 @@ iomanip
 algorithm
 -
 
-../data/class-integer.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/class-integer.hpp
 
-../data/class-matrix.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/class-matrix.hpp
 iostream
 -
 iomanip
@@ -35,40 +51,4 @@ vector
 -
 stdexcept
 -
-
-../deque.hpp
-iostream
--
-exceptions.hpp
-../exceptions.hpp
-cstddef
--
-
-../exceptions.hpp
-cstddef
--
-cstring
--
-string
--
-
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/code.cpp
-iostream
--
-ctime
--
-vector
--
-deque
--
-random
--
-class-integer.hpp
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/class-integer.hpp
-class-matrix.hpp
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/class-matrix.hpp
-class-bint.hpp
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/class-bint.hpp
-deque.hpp
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/deque.hpp
 

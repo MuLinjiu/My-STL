@@ -791,7 +791,7 @@ namespace sjtu {
         friend class block;
         class block{
         public:
-            T *nodearrary[105];
+            T *nodearrary[405];
             block *next = nullptr;
             block * pre = nullptr;
             int block_size = 0;
@@ -817,15 +817,15 @@ namespace sjtu {
             }
             void split(){
                 block *tmp = new block;
-                for(int i = 0 ; i < 50 ; i++){
-                    tmp->nodearrary[i] = new T(*(this->nodearrary[i + 50]));
+                for(int i = 0 ; i < 200 ; i++){
+                    tmp->nodearrary[i] = new T(*(this->nodearrary[i + 200]));
                 }
-                for(int i = 0 ; i < 50 ; i++){
-                    delete (this->nodearrary[i + 50]);
-                    nodearrary[i + 50] = nullptr;
+                for(int i = 0 ; i < 200 ; i++){
+                    delete (this->nodearrary[i + 200]);
+                    nodearrary[i + 200] = nullptr;
                 }
-                this->block_size = 50;
-                tmp->block_size = 50;
+                this->block_size = 200;
+                tmp->block_size = 200;
                 tmp->next = this->next;
                 tmp->pre = this;
                 this->next->pre = tmp;
@@ -849,7 +849,7 @@ namespace sjtu {
                 if(n == block_size){
                     nodearrary[block_size] = new T(node);
                     block_size++;
-                    if(block_size == 100)split();
+                    if(block_size == 400)split();
                     return;
                 }
                 nodearrary[this->block_size] = new T(*(nodearrary[this->block_size - 1]));
@@ -859,7 +859,7 @@ namespace sjtu {
                 block_size++;
                 //delete nodearrary[n];
                 *nodearrary[n] = node;
-                if(block_size == 100)split();
+                if(block_size == 400)split();
             }
             void deletenode(int n){
                 if(n == block_size - 1 && block_size != 0){
@@ -877,11 +877,11 @@ namespace sjtu {
                 }
                 block *tmp = this->next;
                 block *tmp2 = this->pre;
-                if(tmp->next && block_size + tmp->block_size < 80){
+                if(tmp->next && block_size + tmp->block_size < 300){
                     this->merge();
                     return;
                 }
-                if(tmp2->pre && block_size + tmp2->block_size < 80){
+                if(tmp2->pre && block_size + tmp2->block_size < 300){
                     tmp2->merge();
                 }
             }
@@ -1075,7 +1075,7 @@ namespace sjtu {
              * 		throw if iterator is invalid
              */
             T &operator*() const {
-                if (offset < 0 || offset >= 100 || offset >= block_pointer->block_size)throw invalid_iterator();
+                if (offset < 0 || offset >= 400 || offset >= block_pointer->block_size)throw invalid_iterator();
                 return *(block_pointer->nodearrary[offset]);
             }
 
@@ -1084,7 +1084,7 @@ namespace sjtu {
              * 		throw if iterator is invalid
              */
             T *operator->() const noexcept {
-                if (offset < 0 || offset >= 100 || offset >= block_pointer->block_size)throw invalid_iterator();
+                if (offset < 0 || offset >= 400 || offset >= block_pointer->block_size)throw invalid_iterator();
                 return (block_pointer->nodearrary[offset]);
             }
 
@@ -1265,7 +1265,7 @@ namespace sjtu {
              * 		throw if iterator is invalid
              */
             T& operator*() const {
-                if(offset < 0 || offset >= 100 || offset >= block_pointer->block_size)throw invalid_iterator();
+                if(offset < 0 || offset >= 400 || offset >= block_pointer->block_size)throw invalid_iterator();
                 return *(block_pointer->nodearrary[offset]);
             }
             /**
@@ -1273,7 +1273,7 @@ namespace sjtu {
              * 		throw if iterator is invalid
              */
             T* operator->() const noexcept {
-                if(offset < 0 || offset >= 100 || offset >= block_pointer->block_size)throw invalid_iterator();
+                if(offset < 0 || offset >= 400 || offset >= block_pointer->block_size)throw invalid_iterator();
                 return (block_pointer->nodearrary[offset]);
             }
             /**
@@ -1505,7 +1505,7 @@ namespace sjtu {
 //            pos++;
             num++;
 //            block *tmp1 = new block;
-            if(x == 99){
+            if(x == 399){
 //                for(int i = 0 ; i < 50 ; i++){
 //                    tmp1->nodearrary[i] = new T(*(tmp->nodearrary[i + 50]));
 //                }
@@ -1519,7 +1519,7 @@ namespace sjtu {
 //                tmp1->pre = tmp;
 //                tmp->next->pre = tmp1;
 //                tmp->next  = tmp1;
-                if(position >= 50)return iterator(pos.deq,pos.block_pointer->next,position - 50);
+                if(position >= 200)return iterator(pos.deq,pos.block_pointer->next,position - 200);
                 else return pos;
             }
             return pos;
@@ -1544,12 +1544,12 @@ namespace sjtu {
             int position = pos.offset;
             if(tmp == tail || position < 0 || position >= tmp->block_size)throw invalid_iterator();
             if(pos.block_pointer->block_size - pos.offset == 1){
-                if(tmp->block_size + nxt->block_size <= 80 && nxt != pos.deq->tail){
+                if(tmp->block_size + nxt->block_size <= 300 && nxt != pos.deq->tail){
                     (*tmp).deletenode(position);
                     num--;
                     return iterator(pos.deq,tmp,position);
                 }
-                if(tmp->block_size + prv->block_size <= 80 && prv != pos.deq->head){
+                if(tmp->block_size + prv->block_size <= 300 && prv != pos.deq->head){
                     (*tmp).deletenode(position);
                     num--;
                     return iterator(pos.deq,prv->next,0);
@@ -1563,12 +1563,12 @@ namespace sjtu {
 //            (*tmp).deletenode(position);
 //            num--;
 
-            if(tmp->block_size + nxt->block_size <= 80 && nxt != pos.deq->tail){
+            if(tmp->block_size + nxt->block_size <= 300 && nxt != pos.deq->tail){
                 (*tmp).deletenode(position);
                 num--;
                 return iterator(pos.deq,tmp,position);
             }
-            if(tmp->block_size + prv->block_size <= 80 && prv != pos.deq->head){
+            if(tmp->block_size + prv->block_size <= 300 && prv != pos.deq->head){
                 (*tmp).deletenode(position);
                 num--;
                 return iterator(pos.deq,prv,prvb + position);

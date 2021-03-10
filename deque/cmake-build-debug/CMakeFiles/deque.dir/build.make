@@ -57,27 +57,27 @@ include CMakeFiles/deque.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/deque.dir/flags.make
 
-CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o: CMakeFiles/deque.dir/flags.make
-CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o: ../data/two.memcheck/code.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o -c "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/code.cpp"
+CMakeFiles/deque.dir/data/two/code.cpp.o: CMakeFiles/deque.dir/flags.make
+CMakeFiles/deque.dir/data/two/code.cpp.o: ../data/two/code.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/deque.dir/data/two/code.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/deque.dir/data/two/code.cpp.o -c "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two/code.cpp"
 
-CMakeFiles/deque.dir/data/two.memcheck/code.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/deque.dir/data/two.memcheck/code.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/code.cpp" > CMakeFiles/deque.dir/data/two.memcheck/code.cpp.i
+CMakeFiles/deque.dir/data/two/code.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/deque.dir/data/two/code.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two/code.cpp" > CMakeFiles/deque.dir/data/two/code.cpp.i
 
-CMakeFiles/deque.dir/data/two.memcheck/code.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/deque.dir/data/two.memcheck/code.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two.memcheck/code.cpp" -o CMakeFiles/deque.dir/data/two.memcheck/code.cpp.s
+CMakeFiles/deque.dir/data/two/code.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/deque.dir/data/two/code.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/data/two/code.cpp" -o CMakeFiles/deque.dir/data/two/code.cpp.s
 
 # Object files for target deque
 deque_OBJECTS = \
-"CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o"
+"CMakeFiles/deque.dir/data/two/code.cpp.o"
 
 # External object files for target deque
 deque_EXTERNAL_OBJECTS =
 
-deque: CMakeFiles/deque.dir/data/two.memcheck/code.cpp.o
+deque: CMakeFiles/deque.dir/data/two/code.cpp.o
 deque: CMakeFiles/deque.dir/build.make
 deque: CMakeFiles/deque.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/d/HXL/FIRST(2)/STLite_ACM-main/deque/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable deque"
