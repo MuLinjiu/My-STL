@@ -1100,6 +1100,7 @@ namespace sjtu {
                         offset == deq->tail->pre->block_size)
                         return true;
                     if (deq == rhs.deq && offset == rhs.offset && block_pointer == rhs.block_pointer)return true;
+                    else return false;
                 } else return false;
             }
 
