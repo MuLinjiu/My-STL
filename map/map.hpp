@@ -3,10 +3,14 @@
  */
 #ifndef SJTU_MAP_HPP
 #define SJTU_MAP_HPP
-
+#define maxn 1000000
+#define alpha 0.75
 // only for std::less<T>
+#include <iostream>
 #include <functional>
 #include <cstddef>
+#include<cstdio>
+#include <cmath>
 #include "utility.hpp"
 #include "exceptions.hpp"
 
@@ -17,13 +21,96 @@ template<
 	class T,
 	class Compare = std::less<Key>
 > class map {
+    Compare mycmp;
+private:
+    int total = 0;
 public:
+    int max(int a,int b){
+        return(a < b) ? b : a;
+    }
 	/**
 	 * the internal type of data.
 	 * it should have a default constructor, a copy constructor.
 	 * You can use sjtu::map as value_type by typedef.
 	 */
 	typedef pair<const Key, T> value_type;
+    class node{
+    private:
+        value_type *key;
+        node *fa,*ls,*rs;
+        int hight;
+    public:
+        node():key(nullptr),fa(nullptr),ls(nullptr),rs(nullptr),hight(0){}
+        node(const value_type &key1,int h = 0):hight(h){
+            key = new value_type (key1);
+        }
+        ~node(){
+            delete key;
+        }
+    };
+//    node *root = nullptr;
+//    node *tail = nullptr;
+    node *newnode(value_type key1){
+        node *n = new node(key1);
+        n->fa = nullptr;
+        n->ls = nullptr;
+        n->rs = nullptr;
+        return n;
+    }
+    int gethight(node * root){
+            if(root == nullptr){
+                return 0;
+            }else {
+                return (max(gethight(root->ls),gethight(root->rs)) + 1);
+            }
+    }
+    int getdh(node * root){
+        return gethight(root->ls) - gethight(root->rs);
+    }
+    node *right_rotate(node * root){
+        node *l = root->ls;
+        node *r = root->rs;
+        l->rs = root;
+        root->ls = r;
+        return l;
+    }
+    node *left_rotate(node * root){
+        node *l = root->ls;
+        node *r = root->rs;
+        r->ls = root;
+        root->rs = l;
+        return r;
+    }
+    node *getmin(node * root){
+        if(root->ls == nullptr)return root;
+        else {
+            return getmin(root->ls);
+        }
+    }
+    node *getmax(node * root){
+        if(root->rs == nullptr)return root;
+        else {
+            return getmax(root->rs);
+        }
+    }
+    node *insert(node * root, value_type key1){
+        if(root == nullptr)throw invalid_iterator();
+        else {
+            if(mycmp(key1.first,root->key->first)){
+                root->ls = insert(root->ls,key1);
+            }
+            else {
+                root->rs = insert(root->rs,key1);
+            }
+            int x = getdh(root);
+            if(x > 1){
+                
+            }
+            else if(x < -1){
+
+            }
+        }
+    }
 	/**
 	 * see BidirectionalIterator at CppReference for help.
 	 *
