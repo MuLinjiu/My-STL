@@ -60,6 +60,7 @@ bool check2(){//Q.insert
 	int p = Q[6];
 	if(Q.insert(sjtu::map<int, int>::value_type(6, 9)).second) return 0;
 	it = Q.insert(sjtu::pair<int, int>(6, 9)).first;
+	//std::cout<<it->second << " " << Q[6] << std::endl;
 	if(it -> second != Q[6]) return 0;
 	
 	it = Q.insert(sjtu::map<int, int>::value_type(325, 666)).first;

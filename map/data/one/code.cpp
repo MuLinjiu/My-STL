@@ -41,6 +41,7 @@ void tester(void) {
 	//	test: empty(), size()
 	assert(map.empty() && map.size() == 0);
 	//	test: operator[], insert()
+    //std::cout << Integer::counter <<44<< std::endl;
 	for (int i = 0; i < 100000; ++i) {
 		std::string string = "";
 		for (int number = i; number; number /= 10) {
@@ -50,12 +51,21 @@ void tester(void) {
 		if (i & 1) {
 			map[Integer(i)] = string;
 			auto result = map.insert(sjtu::pair<Integer, std::string>(Integer(i), string));
+            //std::cout << Integer::counter <<1<< std::endl;
 			assert(!result.second);
+//			if(i > 17000){
+//			    std::cout<<i<<" ";
+//			}
 		} else {
 			auto result = map.insert(sjtu::pair<Integer, std::string>(Integer(i), string));
+            //std::cout << Integer::counter <<2<< std::endl;
 			assert(result.second);
+//            if(i > 17000){
+//                std::cout<<i<<" ";
+//            }
 		}
 	}
+    //std::cout << Integer::counter <<66<< std::endl;
 	//	test: count(), find(), erase()
 	for (int i = 0; i < 100000; ++i) {
 		if (i > 1896 && i <= 2016) {
@@ -64,7 +74,9 @@ void tester(void) {
 		assert(map.count(Integer(i)) == 1);
 		assert(map.find(Integer(i)) != map.end());
 		map.erase(map.find(Integer(i)));
+		//std::cout<<i<<" ";
 	}
+    //std::cout << Integer::counter << 77<<std::endl;
 	//	test: constructor, operator=, clear();
 	for (int i = 0; i < (int)map.size(); ++i) {
 		sjtu::map<Integer, std::string, Compare> copy(map);
@@ -81,6 +93,7 @@ void tester(void) {
 		std::cout << map.size() << " " << copy.size() << " ";
 	}
 	std::cout << std::endl;
+    //std::cout << Integer::counter <<94<< std::endl;
 	//	test: const_iterator, cbegin(), cend(), operator++, at()
 	sjtu::map<Integer, std::string, Compare>::const_iterator const_iterator;
 	const_iterator = map.cbegin();
@@ -102,13 +115,16 @@ void tester(void) {
 		std::cout << (--iterator)->second << " ";
 	}
 	//	test: erase()
+	map.clear();
 	while (map.begin() != map.end()) {
 		map.erase(map.begin());
 	}
 	assert(map.empty() && map.size() == 0);
+    //std::cout << Integer::counter << std::endl;
 	//	test: operator[]
 	for (int i = 0; i < 100000; ++i) {
 		std::cout << map[Integer(i)];
+//        map.insert(sjtu::pair<Integer, std::string>(Integer(i), "string"));
 	}
 	std::cout << map.size() << std::endl;
 }
@@ -116,4 +132,13 @@ void tester(void) {
 int main(void) {
 	tester();
 	std::cout << Integer::counter << std::endl;
+//sjtu::map<int , int> a;
+//for(int i = 1 ; i <= 100111 ; ++i) {
+//    a.insert(sjtu::pair<int, int>(i, i));
+//}
+//    sjtu::map<int , int> b(a);
+//    sjtu::map<int, int>::iterator iterator;
+//    for(iterator = a.begin() ; iterator != a.end() ; iterator++){
+//        std::cout<<iterator->second<<" ";
+//    }
 }

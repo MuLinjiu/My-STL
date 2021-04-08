@@ -21,6 +21,8 @@ functional
 -
 cstddef
 -
+cstdio
+-
 cmath
 -
 utility.hpp
@@ -32,13 +34,27 @@ exceptions.hpp
 utility
 -
 
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/one/code.cpp
-map.hpp
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/one/map.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/five/code.cpp
 iostream
 -
-cassert
+map
 -
-string
+ctime
 -
+queue
+-
+cmath
+-
+vector
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+algorithm
+-
+map.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/five/map.hpp
 

@@ -464,6 +464,7 @@ void tester9() {
 }
 
 void tester10() {
+    int cnt = 0;
 	TestCore console("Objects' independence testing...", 10, 6 * MAXN);
 	console.init();
 	auto ret = generator(MAXN);
@@ -474,7 +475,12 @@ void tester10() {
 			auto x = ret[i];
 			IntB tmp = IntB(rand());
 			stdmap.insert(std::map<IntA, IntB, Compare>::value_type(x, tmp));
-			srcmap.insert(sjtu::map<IntA, IntB, Compare>::value_type(x, tmp));
+			cnt++;
+			if(i == 15357){
+			    srcmap.insert(sjtu::map<IntA, IntB, Compare>::value_type(x, tmp));
+			}
+			else srcmap.insert(sjtu::map<IntA, IntB, Compare>::value_type(x, tmp));
+			//std::cout<<i<<" "<<srcmap.size()<<std::endl;
 			console.showProgress();
 		}
 		std::map<IntA, IntB, Compare> std1(stdmap), std2;
@@ -484,19 +490,24 @@ void tester10() {
 		for (int i = 0; i < (int)ret.size(); i++) {
 			if (stdmap.find(ret[i]) != stdmap.end()) {
 				srcmap.erase(srcmap.find(ret[i]));
+				cnt--;
 				stdmap.erase(stdmap.find(ret[i]));
 			}
 			console.showProgress();
 		}
-		ret = generator(MAXN);
+        //std::cout<<std1.size()<<std::endl;
+
+        ret = generator(MAXN);
 		for (int i = 0; i < (int)ret.size(); i++) {
 			auto x = ret[i];
 			IntB tmp = IntB(rand());
-			std1.insert(std::map<IntA, IntB, Compare>::value_type(x, tmp));
+			if(std1.insert(std::map<IntA, IntB, Compare>::value_type(x, tmp)).second)cnt++;
 			src1.insert(sjtu::map<IntA, IntB, Compare>::value_type(x, tmp));
 			console.showProgress();
+            //std::cout<<cnt<<" "<<src1.size()<<std::endl;
 		}
-		
+//		std::cout<<cnt<<" "<<src1.size()<<std::endl;
+//		std::cout<<std1.size()<<std::endl;
 		auto itB = srcmap.begin();
 		for (auto itA = stdmap.begin(); itA != stdmap.end(); ++itA, ++itB) {
 			if ((itA -> first).val != (itA -> first).val || (itB -> first).val != (itB -> first).val) {
@@ -505,13 +516,18 @@ void tester10() {
 			}
 			console.showProgress();
 		}
-		
 		itB = src1.begin();
+		int A = 0,B = 0;
+//		for(auto itA = std1.begin() ; itA != std1.end();++itA)A++;
+//        for(auto itA = src1.begin() ; itA != src1.end();++itA)B++;
+        //std::cout<<A<<" "<<B<<std::endl;
 		for (auto itA = std1.begin(); itA != std1.end(); ++itA, ++itB) {
 			if ((itA -> first).val != (itA -> first).val || (itB -> first).val != (itB -> first).val) {
 				console.fail();
 				return;
 			}
+//			std::cout<<(itA -> first).val<<std::endl;
+//            std::cout<<(itB -> first).val<<std::endl;
 			console.showProgress();
 		}
 		
