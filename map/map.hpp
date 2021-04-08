@@ -146,7 +146,8 @@ public:
     }
     void insert_(node *&root,node *&newnodee){
         if(root == nullptr){
-            root = new node(*newnodee);
+            //root = new node(*newnodee);
+            root = newnodee;
         }
         else if(mycmp(newnodee->key->first,root->key->first)){
             insert_(root->ls,newnodee);
@@ -206,15 +207,72 @@ public:
                     return false;
                 }
             }else{
-                node * tmp = root->rs;
-                while(tmp->ls != nullptr)tmp = tmp->ls;
-                delete root->key;
-                root->key = new value_type (*tmp->key);
-                if(remove(root->rs,tmp))return true;//右子树没变矮
-                return adjust(root,1);
+//                node * tmp = root->rs;
+//                while(tmp->ls != nullptr)tmp = tmp->ls;
+//                delete root->key;
+//                root->key = new value_type (*tmp->key);
+//                if(remove(root->rs,tmp))return true;//右子树没变矮
+//                return adjust(root,1);
+                node *tmp = getmax(root->ls);
+                if(tmp != root->ls){
+                    node *f = root->fa;
+                    node * l = root->ls;
+                    node * r = root->rs;
+                    int h = root->hight;
+                    value_type val = *root->key;
+
+                    node *tmpf = tmp->fa;
+                    node * tmpl = tmp->ls;
+                    node * tmpr = tmp->rs;
+                    int tmph = tmp->hight;
+                    value_type tmpval = *tmp->key;
+
+                    root->fa = tmp->fa;
+                    tmpf->rs = root;
+                    root->ls = tmpl;
+                    if(tmpl)tmpl->fa = root;
+                    root->rs = nullptr;
+                    root->hight = tmph;
+
+                    tmp->fa = f;
+                    tmp->ls = l;
+                    l->fa = tmp;
+                    tmp->rs = r;
+                    r->fa = tmp;
+                    tmp->hight = h;
+
+                    root = tmp;
+                    if(remove(root->ls,x))return true;//右子树没变矮
+                    return adjust(root,0);
+                }else{
+                    node *f = root->fa;
+                    node * r = root->rs;
+                    int h = root->hight;
+                    value_type val = *root->key;
+
+                    node * tmpl = tmp->ls;
+                    int tmph = tmp->hight;
+                    value_type tmpval = *tmp->key;
+
+                    root->fa = tmp;
+                    root->ls = tmpl;
+                    if(tmpl)tmpl->fa = root;
+                    root->rs = nullptr;
+                    root->hight = tmph;
+
+                    tmp->fa = f;
+                    tmp->ls = root;
+                    tmp->rs = r;
+                    r->fa = tmp;
+                    tmp->hight = h;
+
+                    root = tmp;
+                    if(remove(root->ls,x))return true;//右子树没变矮
+                    return adjust(root,0);
+                }
             }
         }
-        if(mycmp(x->key->first,root->key->first)){
+        else if(mycmp(x->key->first,root->key->first)){
             if(remove(root->ls,x))return true;
             return adjust(root,0);
         }else {
@@ -253,12 +311,12 @@ public:
     }
     void copy(node *&cur, node *fa, node *other_cur, node *other_ed){
         if(other_cur == nullptr){
-            //if(cur)delete cur;
+            if(cur)delete cur;
             cur = nullptr;
             return;
         }
-//        if(cur)delete cur;
-//        cur = nullptr;
+        if(cur)delete cur;
+        cur = nullptr;
         cur = new node;
         cur->key = new value_type (*other_cur->key);
         cur->hight = other_cur->hight;
@@ -487,6 +545,8 @@ public:
 	 * TODO two constructors
 	 */
 	map() :node_number(0),rt(nullptr){
+	    if(ed)delete ed;
+	    ed = nullptr;
 	    ed = new node;
 	}
 	map(const map &other){
@@ -516,14 +576,13 @@ public:
 	     if(root == nullptr)return;
 	     clear_(root->ls);
 	     clear_(root->rs);
-	     if(root->rs)root->rs = nullptr;
-         if(root->ls)root->ls = nullptr;
 	     delete root;
 	     root = nullptr;
 	     node_number = 0;
 	 }
 	~map() {
 	    clear_(rt);
+	    delete ed;
 	}
 	/**
 	 * TODO
@@ -624,9 +683,6 @@ public:
 	    bool flag = true;
 	    try{
 	        this->insert_(rt,newnode);
-//	        if(node_number == 0){
-//	            rt = newnode;
-//	        }
 	    }catch (...){
 	        flag = false;
 	        delete newnode;

@@ -7,7 +7,7 @@ include_directories(.)
 include_directories(data)
 
 add_executable(map
-        data/five/code.cpp
+        data/seven.memcheck/code.cpp
         data/class-bint.hpp
         data/class-integer.hpp
         data/class-matrix.hpp
