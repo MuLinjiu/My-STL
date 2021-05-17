@@ -15,15 +15,9 @@ string
 -
 
 ../map.hpp
-iostream
--
 functional
 -
 cstddef
--
-cstdio
--
-cmath
 -
 utility.hpp
 ../utility.hpp
@@ -34,13 +28,27 @@ exceptions.hpp
 utility
 -
 
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/seven.memcheck/code.cpp
-map.hpp
-/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/seven.memcheck/map.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/two/code.cpp
 iostream
 -
-cassert
+map
 -
-string
+ctime
 -
+queue
+-
+cmath
+-
+vector
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+algorithm
+-
+map.hpp
+/mnt/d/HXL/FIRST(2)/STLite_ACM-main/map/data/two/map.hpp
 

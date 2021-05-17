@@ -184,7 +184,6 @@ public:
             if(!root->ls || !root->rs){
                 node *oldnode = root;
                 node *fa = root->fa;
-//                root = (root->ls != nullptr)?root->ls:root->rs;
                 if(root->ls != nullptr){
                     root = root->ls;
                     root->fa = fa;
@@ -207,12 +206,6 @@ public:
                     return false;
                 }
             }else{
-//                node * tmp = root->rs;
-//                while(tmp->ls != nullptr)tmp = tmp->ls;
-//                delete root->key;
-//                root->key = new value_type (*tmp->key);
-//                if(remove(root->rs,tmp))return true;//右子树没变矮
-//                return adjust(root,1);
                 node *tmp = getmax(root->ls);
                 if(tmp != root->ls){
                     node *f = root->fa;
@@ -240,7 +233,6 @@ public:
                     tmp->rs = r;
                     r->fa = tmp;
                     tmp->hight = h;
-
                     root = tmp;
                     if(remove(root->ls,x))return true;//右子树没变矮
                     return adjust(root,0);
@@ -249,23 +241,19 @@ public:
                     node * r = root->rs;
                     int h = root->hight;
                     value_type val = *root->key;
-
                     node * tmpl = tmp->ls;
                     int tmph = tmp->hight;
                     value_type tmpval = *tmp->key;
-
                     root->fa = tmp;
                     root->ls = tmpl;
                     if(tmpl)tmpl->fa = root;
                     root->rs = nullptr;
                     root->hight = tmph;
-
                     tmp->fa = f;
                     tmp->ls = root;
                     tmp->rs = r;
                     r->fa = tmp;
                     tmp->hight = h;
-
                     root = tmp;
                     if(remove(root->ls,x))return true;//右子树没变矮
                     return adjust(root,0);

@@ -123,32 +123,32 @@ map/fast:
 	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/build
 .PHONY : map/fast
 
-data/seven.memcheck/code.o: data/seven.memcheck/code.cpp.o
+data/two/code.o: data/two/code.cpp.o
 
-.PHONY : data/seven.memcheck/code.o
+.PHONY : data/two/code.o
 
 # target to build an object file
-data/seven.memcheck/code.cpp.o:
-	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/data/seven.memcheck/code.cpp.o
-.PHONY : data/seven.memcheck/code.cpp.o
+data/two/code.cpp.o:
+	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/data/two/code.cpp.o
+.PHONY : data/two/code.cpp.o
 
-data/seven.memcheck/code.i: data/seven.memcheck/code.cpp.i
+data/two/code.i: data/two/code.cpp.i
 
-.PHONY : data/seven.memcheck/code.i
+.PHONY : data/two/code.i
 
 # target to preprocess a source file
-data/seven.memcheck/code.cpp.i:
-	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/data/seven.memcheck/code.cpp.i
-.PHONY : data/seven.memcheck/code.cpp.i
+data/two/code.cpp.i:
+	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/data/two/code.cpp.i
+.PHONY : data/two/code.cpp.i
 
-data/seven.memcheck/code.s: data/seven.memcheck/code.cpp.s
+data/two/code.s: data/two/code.cpp.s
 
-.PHONY : data/seven.memcheck/code.s
+.PHONY : data/two/code.s
 
 # target to generate assembly for a file
-data/seven.memcheck/code.cpp.s:
-	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/data/seven.memcheck/code.cpp.s
-.PHONY : data/seven.memcheck/code.cpp.s
+data/two/code.cpp.s:
+	$(MAKE) -f CMakeFiles/map.dir/build.make CMakeFiles/map.dir/data/two/code.cpp.s
+.PHONY : data/two/code.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... map"
-	@echo "... data/seven.memcheck/code.o"
-	@echo "... data/seven.memcheck/code.i"
-	@echo "... data/seven.memcheck/code.s"
+	@echo "... data/two/code.o"
+	@echo "... data/two/code.i"
+	@echo "... data/two/code.s"
 .PHONY : help
 
 
